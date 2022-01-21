@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "Introducing Asynchronous SQLAlchemy"
+version = "0.1.0"
+description = "Project with code snippets for my talk about asynchronous sqlalchemy"
+authors = ["Sebastiaan Zeeff <sebastiaan.zeeff@ordina.nl>"]
+packages = [
+    { include = "talk_async_sqlalchemy", from = "src" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+asyncpg = "^0.25.0"
+SQLAlchemy = { extras = ["mypy"], version = "^1.4.29" }
+psycopg2-binary = "^2.9.3"
+
+[tool.poetry.dev-dependencies]
+black = "^21.12b0"
+isort = "^5.10.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+plugins = "sqlalchemy.ext.mypy.plugin"

@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:14.1-alpine3.15
+    ports:
+      - "127.0.0.1:9876:5432"
+    environment:
+      POSTGRES_DB: sqlalchemy
+      POSTGRES_PASSWORD: sqlalchemy
+      POSTGRES_USER: sqlalchemy
